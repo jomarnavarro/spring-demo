@@ -18,34 +18,9 @@ class SpringDemoApplicationTests {
 	@Autowired
 	private User user;
 
-	@Value("${MAVEN_HOME}")
-	private String mavenHome;
-
-	@Value("${objects.fruits}")
-	private List<String> fruits;
-
-
-	@Autowired
-	private Faker faker;
-
 	@Test
 	void contextLoads() {
-
 		user.printDetails();
-		System.out.println(this.mavenHome);
-		for (String fruit:
-			 fruits) {
-			System.out.println(fruit);
-		}
-
-		System.out.println(
-				String.format(
-						"Name: %s\nLast Name: %s\nAddress: %s",
-						faker.name().firstName(),
-						faker.name().lastName(),
-						faker.address().fullAddress()
-				)
-		);
 	}
 
 }
