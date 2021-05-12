@@ -18,9 +18,17 @@ class SpringDemoApplicationTests {
 	@Autowired
 	private User user;
 
+	@Autowired
+	private Television tv;
+
 	@Test
 	void contextLoads() {
 		user.printDetails();
+	}
+
+	@Test
+	void testTelevision() {
+		this.tv.playMovie();
 	}
 
 }
