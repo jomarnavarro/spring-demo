@@ -1,5 +1,6 @@
 package com.testautomationcoach.springdemo;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,10 @@ class SpringDemoApplicationTests {
 	@Value("${objects.fruits}")
 	private List<String> fruits;
 
+
+	@Autowired
+	private Faker faker;
+
 	@Test
 	void contextLoads() {
 
@@ -32,6 +37,15 @@ class SpringDemoApplicationTests {
 			 fruits) {
 			System.out.println(fruit);
 		}
+
+		System.out.println(
+				String.format(
+						"Name: %s\nLast Name: %s\nAddress: %s",
+						faker.name().firstName(),
+						faker.name().lastName(),
+						faker.address().fullAddress()
+				)
+		);
 	}
 
 }
