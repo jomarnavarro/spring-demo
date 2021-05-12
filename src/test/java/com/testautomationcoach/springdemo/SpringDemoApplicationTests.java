@@ -10,6 +10,10 @@ import java.util.List;
 @SpringBootTest
 class SpringDemoApplicationTests {
 
+	/**
+	 * To run from the command line and override values, use
+	 * <code>mvn clean test -Dvar=value</code>
+	 */
 	@Autowired
 	private User user;
 
